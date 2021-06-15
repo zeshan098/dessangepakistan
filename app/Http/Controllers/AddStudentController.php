@@ -22,10 +22,7 @@ class AddStudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -53,7 +50,7 @@ class AddStudentController extends Controller
             'image_path'  => 'required|mimes:doc,docx,pdf,jpeg,jpg,png|max:2048'
            ]);
         $image_path = $request->file('image_path');
- 
+        
         $new_name = rand() . '.' . $image_path->getClientOriginalExtension();
         if(Student_Detail::create([
             'st_name' => $request->input('st_name'),

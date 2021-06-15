@@ -34,12 +34,12 @@ class RedirectIfAuthenticated
             else if(Auth::user()->role == "admin"){
                 return redirect()->intended('admin/users');
             }
-            else if(Auth::user()->role == "clerk"){
-                return redirect()->intended('clerk/oil_report');
+            else if(Auth::user()->role == "social"){
+                return redirect()->intended('social/service_list');
             }
-            // else if(Auth::user()->role == "oil_filling"){
-            //     return redirect()->intended('oil_filling/filing_detail');
-            // }
+            else if(Auth::user()->role == "reception"){
+                return redirect()->intended('reception/appointment_list');
+            }
             // else if(Auth::user()->role == "booking"){
             //     return redirect()->intended('booking/booking_list');
             // }
